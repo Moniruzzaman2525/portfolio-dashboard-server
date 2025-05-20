@@ -6,7 +6,7 @@ export interface TExperience {
     company: string
     image: string
     role: string
-    startData: string
-    endData?: string
+    startDate: string
+    endDate?: string
     description?: string
 }

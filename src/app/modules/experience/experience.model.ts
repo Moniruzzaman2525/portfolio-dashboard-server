@@ -6,9 +6,9 @@ const blocksSchema = new Schema<TExperience>({
     company: { type: String, required: true },
     image: { type: String, required: true },
     role: { type: String, required: true },
-    startData: { type: String, required: true },
+    startDate: { type: String, required: true },
     description: { type: String, required: true },
-    endData: { type: String },
+    endDate: { type: String },
 }, {
     timestamps: true,
 }
