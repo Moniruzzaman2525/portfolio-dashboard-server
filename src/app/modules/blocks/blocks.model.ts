@@ -6,7 +6,7 @@ const blocksSchema = new Schema<TBlocks>({
     description: { type: String, required: true },
     type: {
         type: String,
-        enum: ['ui-component', 'api', 'utility', 'custom'],
+        enum: ['ui-component', 'feature', 'layout', 'utility', 'integration'],
         required: true,
     },
     project: { type: String, required: true },
