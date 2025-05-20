@@ -25,9 +25,16 @@ const deleteBlocks = async (id: string): Promise<TBlocks | null> => {
     return blocks
 }
 
+
+const getSingleBlock = async (id: string): Promise<TBlocks | null> => {
+    const blocks = await Blocks.findById(id)
+    return blocks
+}
+
 export const blocksServices = {
     createBlock,
     getBlocks,
     updateBlocks,
-    deleteBlocks
+    deleteBlocks,
+    getSingleBlock
 }
