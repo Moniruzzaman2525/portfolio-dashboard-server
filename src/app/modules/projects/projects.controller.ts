@@ -5,8 +5,8 @@ import { projectServices } from "./projects.services"
 
 
 const createUserController = catchAsync(async (req, res) => {
-    const userData = req.body
-    const result = await projectServices.createProjectIntoDB(userData)
+    const projectData = req.body
+    const result = await projectServices.createProjectIntoDB(projectData)
 
     sendResponse(res, {
         success: true,
@@ -23,15 +23,31 @@ const getProjects = catchAsync(async (req, res) => {
     sendResponse(res, {
         success: true,
         statusCode: 201,
-        message: 'Project created successfully',
+        message: 'Project retrieved successfully',
+        data: result
+    })
+
+})
+
+const updateProject = catchAsync(async (req, res) => {
+
+    const projectData = req.body
+    const id = req.params.id
+
+    const result = await projectServices.updateProject(id, projectData)
+
+    sendResponse(res, {
+        success: true,
+        statusCode: 201,
+        message: 'Project updated successfully',
         data: result
     })
 
 })
 
 
-
 export const projectControllers = {
     createUserController,
-    getProjects
+    getProjects,
+    updateProject
 }

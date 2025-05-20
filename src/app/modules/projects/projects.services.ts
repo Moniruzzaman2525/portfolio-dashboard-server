@@ -13,9 +13,14 @@ const getProjects = async (): Promise<TProject[]> => {
     return project
 }
 
+const updateProject = async (id: string, payload: TProject): Promise<TProject | null> => {
+    const project = await Project.findOneAndUpdate({ _id: id }, payload, { new: true })
+    return project
+}
 
 
 export const projectServices = {
     createProjectIntoDB,
-    getProjects
+    getProjects,
+    updateProject
 }
