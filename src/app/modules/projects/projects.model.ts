@@ -11,6 +11,7 @@ const projectSchema = new Schema<TProject>({
     },
     startDate: { type: String, required: true },
     image: { type: String, required: true },
+    liveLink: { type: String, required: true },
     endDate: { type: String },
     owner: { type: String, required: true, minlength: 2 },
 }, {
