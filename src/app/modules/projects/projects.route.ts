@@ -8,5 +8,6 @@ router.get('/', projectControllers.getProjects)
 router.post('/', projectControllers.createUserController)
 router.patch('/:id', projectControllers.updateProject)
 router.delete('/:id', projectControllers.deleteProject)
+router.get('/:id', projectControllers.getSingleProject)
 
 export const projectRoute = router

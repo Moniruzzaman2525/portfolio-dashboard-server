@@ -23,9 +23,15 @@ const deleteProject = async (id: string): Promise<TProject | null> => {
     return project
 }
 
+const getSingleProject = async (id: string): Promise<TProject | null> => {
+    const project = await Project.findById(id)
+    return project
+}
+
 export const projectServices = {
     createProjectIntoDB,
     getProjects,
     updateProject,
-    deleteProject
+    deleteProject,
+    getSingleProject
 }
