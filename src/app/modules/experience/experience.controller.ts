@@ -1,12 +1,12 @@
 import catchAsync from "../../utils/catchAsync"
 import sendResponse from "../../utils/sendResponse"
-import { skillsServices } from "./experience.services"
+import { experienceServices } from "./experience.services"
 
 
 
-const createSkills = catchAsync(async (req, res) => {
+const createExperience = catchAsync(async (req, res) => {
     const blocksData = req.body
-    const result = await skillsServices.createSkills(blocksData)
+    const result = await experienceServices.createExperience(blocksData)
 
     sendResponse(res, {
         success: true,
@@ -16,9 +16,9 @@ const createSkills = catchAsync(async (req, res) => {
     })
 
 })
-const getSkills = catchAsync(async (req, res) => {
+const getExperience = catchAsync(async (req, res) => {
 
-    const result = await skillsServices.getSkills()
+    const result = await experienceServices.getExperience()
 
     sendResponse(res, {
         success: true,
@@ -28,10 +28,10 @@ const getSkills = catchAsync(async (req, res) => {
     })
 
 })
-const getSingleSkills = catchAsync(async (req, res) => {
+const getSingleExperience = catchAsync(async (req, res) => {
 
     const id = req.params.id
-    const result = await skillsServices.getSingleSkills(id)
+    const result = await experienceServices.getSingleExperience(id)
 
     sendResponse(res, {
         success: true,
@@ -42,12 +42,12 @@ const getSingleSkills = catchAsync(async (req, res) => {
 
 })
 
-const updateSkills = catchAsync(async (req, res) => {
+const updateExperience = catchAsync(async (req, res) => {
 
     const blocksData = req.body
     const id = req.params.id
 
-    const result = await skillsServices.updateSkills(id, blocksData)
+    const result = await experienceServices.updateExperience(id, blocksData)
 
     sendResponse(res, {
         success: true,
@@ -59,9 +59,9 @@ const updateSkills = catchAsync(async (req, res) => {
 })
 
 
-const deleteSkills = catchAsync(async (req, res) => {
+const deleteExperience = catchAsync(async (req, res) => {
     const id = req.params.id
-    const result = await skillsServices.deleteSkills(id)
+    const result = await experienceServices.deleteExperience(id)
 
     sendResponse(res, {
         success: true,
@@ -72,10 +72,10 @@ const deleteSkills = catchAsync(async (req, res) => {
 
 })
 
-export const skillController = {
-    createSkills,
-    getSkills,
-    updateSkills,
-    deleteSkills,
-    getSingleSkills
+export const experienceControllers = {
+    createExperience,
+    getExperience,
+    updateExperience,
+    deleteExperience,
+    getSingleExperience
 }

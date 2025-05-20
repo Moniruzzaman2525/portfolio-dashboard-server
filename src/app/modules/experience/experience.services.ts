@@ -1,42 +1,38 @@
-
-import { TSkills } from "./experience.interface"
-import { Skills } from "./experience.model"
-
+import { TExperience } from "./experience.interface"
+import { Experience } from "./experience.model"
 
 
 
-
-
-const createSkills = async (payload: TSkills): Promise<TSkills> => {
-    const result = await Skills.create(payload)
+const createExperience = async (payload: TExperience): Promise<TExperience> => {
+    const result = await Experience.create(payload)
     return result
 }
 
-const getSkills = async (): Promise<TSkills[]> => {
-    const result = await Skills.find({})
+const getExperience = async (): Promise<TExperience[]> => {
+    const result = await Experience.find({})
     return result
 }
 
-const updateSkills = async (id: string, payload: TSkills): Promise<TSkills | null> => {
-    const result = await Skills.findOneAndUpdate({ _id: id }, payload, { new: true })
+const updateExperience = async (id: string, payload: TExperience): Promise<TExperience | null> => {
+    const result = await Experience.findOneAndUpdate({ _id: id }, payload, { new: true })
     return result
 }
 
-const deleteSkills = async (id: string): Promise<TSkills | null> => {
-    const result = await Skills.findOneAndDelete({ _id: id })
+const deleteExperience = async (id: string): Promise<TExperience | null> => {
+    const result = await Experience.findOneAndDelete({ _id: id })
     return result
 }
 
 
-const getSingleSkills = async (id: string): Promise<TSkills | null> => {
-    const result = await Skills.findById(id)
+const getSingleExperience = async (id: string): Promise<TExperience | null> => {
+    const result = await Experience.findById(id)
     return result
 }
 
-export const skillsServices = {
-    createSkills,
-    getSkills,
-    updateSkills,
-    deleteSkills,
-    getSingleSkills
+export const experienceServices = {
+    createExperience,
+    getExperience,
+    updateExperience,
+    deleteExperience,
+    getSingleExperience
 }

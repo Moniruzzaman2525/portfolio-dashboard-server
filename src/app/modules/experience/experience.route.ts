@@ -1,13 +1,13 @@
 import express from 'express'
-import { skillController } from './experience.controller'
+import { experienceControllers } from './experience.controller'
 
 const router = express.Router()
 
 
-router.get('/', skillController.getSkills)
-router.post('/', skillController.createSkills)
-router.patch('/:id', skillController.updateSkills)
-router.delete('/:id', skillController.deleteSkills)
-router.get('/:id', skillController.getSingleSkills)
+router.get('/', experienceControllers.getExperience)
+router.post('/', experienceControllers.createExperience)
+router.patch('/:id', experienceControllers.updateExperience)
+router.delete('/:id', experienceControllers.deleteExperience)
+router.get('/:id', experienceControllers.getSingleExperience)
 
-export const skillsRoute = router
+export const experienceRoute = router
