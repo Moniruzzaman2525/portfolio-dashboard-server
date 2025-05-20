@@ -18,9 +18,14 @@ const updateProject = async (id: string, payload: TProject): Promise<TProject | 
     return project
 }
 
+const deleteProject = async (id: string): Promise<TProject | null> => {
+    const project = await Project.findOneAndDelete({ _id: id })
+    return project
+}
 
 export const projectServices = {
     createProjectIntoDB,
     getProjects,
-    updateProject
+    updateProject,
+    deleteProject
 }

@@ -7,5 +7,6 @@ const router = express.Router()
 router.get('/', projectControllers.getProjects)
 router.post('/', projectControllers.createUserController)
 router.patch('/:id', projectControllers.updateProject)
+router.delete('/:id', projectControllers.deleteProject)
 
 export const projectRoute = router
