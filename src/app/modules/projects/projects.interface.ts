@@ -8,4 +8,6 @@ export interface TProject {
     startDate: string
     endDate?: string | null
     owner: string
+    image: string
+    liveLink?: string
 }

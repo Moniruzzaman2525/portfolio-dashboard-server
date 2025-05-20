@@ -9,7 +9,7 @@ const blocksSchema = new Schema<TBlocks>({
         enum: ['ui-component', 'feature', 'layout', 'utility', 'integration'],
         required: true,
     },
-    project: { type: String, required: true },
+    image: { type: String, required: true },
     code: { type: String },
 }, {
     timestamps: true,
