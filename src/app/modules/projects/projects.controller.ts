@@ -16,9 +16,22 @@ const createUserController = catchAsync(async (req, res) => {
     })
 
 })
+const getProjects = catchAsync(async (req, res) => {
+
+    const result = await projectServices.getProjects()
+
+    sendResponse(res, {
+        success: true,
+        statusCode: 201,
+        message: 'Project created successfully',
+        data: result
+    })
+
+})
 
 
 
 export const projectControllers = {
-    createUserController
+    createUserController,
+    getProjects
 }

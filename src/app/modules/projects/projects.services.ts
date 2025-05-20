@@ -8,7 +8,14 @@ const createProjectIntoDB = async (payload: TProject): Promise<TProject> => {
     return project
 }
 
+const getProjects = async (): Promise<TProject[]> => {
+    const project = await Project.find({})
+    return project
+}
+
+
 
 export const projectServices = {
-    createProjectIntoDB
+    createProjectIntoDB,
+    getProjects
 }
