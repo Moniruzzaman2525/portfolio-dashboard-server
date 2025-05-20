@@ -27,11 +27,9 @@ const createUserIntoDB = async (payload: TUser) => {
         const userObj = newUser[0].toObject()
         const jwtPayload = {
             email: userObj.email,
-            name: userObj.name,
             role: userObj.role as string,
             userId: userObj._id,
         };
-
 
         const accessToken = createToken(jwtPayload, config.jwt_access_secret as string, config.jwt_access_expires_in as string)
         const refreshToken = createToken(jwtPayload, config.jwt_refresh_secret as string, config.jwt_refresh_expires_in as string)
@@ -65,7 +63,6 @@ const loginUserServices = async (payload: TUserLogin) => {
 
     const jwtPayload = {
         email: user.email,
-        name: user.name,
         role: user.role as string,
         userId: user._id,
     };
