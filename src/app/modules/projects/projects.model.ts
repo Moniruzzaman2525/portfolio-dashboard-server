@@ -10,7 +10,7 @@ const projectSchema = new Schema<TProject>({
         required: true,
     },
     startDate: { type: String, required: true },
-    endDate: { type: String, required: true },
+    endDate: { type: String },
     owner: { type: String, required: true, minlength: 2 },
 }, {
     timestamps: true,

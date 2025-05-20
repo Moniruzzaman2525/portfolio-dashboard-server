@@ -6,6 +6,6 @@ export interface TProject {
     description: string
     status: 'planning' | 'active' | 'in-progress' | 'completed' | 'on-hold'
     startDate: string
-    endDate: string | null
+    endDate?: string | null
     owner: string
 }
